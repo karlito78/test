@@ -6,43 +6,20 @@
 # split_string("abc") == ["ab", "c_"]
 # split_string("abcdef") == ["ab", "cd", "ef"]
 
-# def split_string(string: str) -> list:
-#
-#     array=[]
-#     array[:0]=string
-#     check = len(string)
-#     if check % 2 == 0:
-#
-#             for i in range(0, len(array)-1, 2):
-#                 array[i] = array[i] + array[i+1]
-#
-#     else:
-#             array = array.append("_")
-#             for i in range(0, len(array)-1, 2):
-#                 array[i] = array[i] + array[i + 1]
-#
-#             return array
-#
-# print(split_string("mamafa;fa;fja;fa"))
+# string = "HelloWorld"
+# array = list(string)
+# print(array)
 
-# def split_string(string: str) -> list:
-#
-#     array=[]
-#     array[:0]=string
-# #     for i in range(0, len(array)-1, 2):
-# #         array[i] = array[i] + array[i+1]
-# #
-# #     return array
-# #
-# # print(split_string("mamama"))
-#
-# print(split_string("mamama"))
+def split_string(string: str) -> list:
 
-string_list = ["a", "b", "c", "d", "f"]
+    array = list(string)
+    list_length = len(array)
+    if list_length % 2 == 1:
+        array.append("_")
+    else:
+        pass
+    paired_letters = [array[i] + array[i + 1] for i in range(0, len(array) - 1, 2)]
 
-list_length = len(string_list)
-paired_list = [string_list[i] + string_list[i+1] for i in range(0, list_length-1, 2)]
-if list_length % 2 == 1:
-    paired_list.append("_")
+    return paired_letters
 
-print(paired_list)
+print(split_string("mamamam"))
